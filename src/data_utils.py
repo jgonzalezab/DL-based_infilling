@@ -66,7 +66,7 @@ def interpolate_stations(input_path, ref_data_path, output_path):
     # Loop over time to map the unstructured data into the structured grid.
     for t in tqdm(range(nt)):
         # Option: average values if multiple points map to the same grid cell.
-        accumulated = np.zeros(lat2d.size)
+        accumulated = np.nans(lat2d.size)
         counts = np.zeros(lat2d.size)
         # Loop over each unstructured point.
         for i, idx in enumerate(indices):
