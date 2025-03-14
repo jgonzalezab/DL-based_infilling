@@ -1,4 +1,5 @@
 {
     "data": "/lustre/gmeteo/WORK/abadj/DL-based_infilling/data",
+    "models": "/lustre/gmeteo/WORK/abadj/DL-based_infilling/models",
     "figs": "/lustre/gmeteo/WORK/abadj/DL-based_infilling/figs/figs_pdf"
 }

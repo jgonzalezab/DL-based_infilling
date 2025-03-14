@@ -30,11 +30,11 @@ def interpolate_variable(input_path, ref_data_path, output_path):
     os.system(f'cdo remapbil,{data_proc_path}/grid.txt {input_path} {output_path}')
     os.system(f'rm {data_proc_path}/grid.txt')
 
-class PretrainingDataset(Dataset):
+class MyDataset(Dataset):
 
     def __init__(self, inputs, outputs):
-        self.inputs = inputs
-        self.outputs = outputs
+        self.inputs = torch.tensor(inputs, dtype=torch.float32) if not isinstance(inputs, torch.Tensor) else inputs
+        self.outputs = torch.tensor(outputs, dtype=torch.float32) if not isinstance(outputs, torch.Tensor) else inputs
 
     def __len__(self):
         return self.inputs.shape[0]
